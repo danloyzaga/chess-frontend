@@ -5,8 +5,8 @@ const HomePage = () => {
   return (
     <React.Fragment>
       <Square
-        isBlack={true}
-        highlighted={false}
+        isDarkTile={true}
+        position="A1"
         chessPiece={{ piece: "n", colour: "b" }}
       ></Square>
     </React.Fragment>

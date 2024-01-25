@@ -1,14 +1,14 @@
 import { Button, styled } from "@mui/material";
-import { colors } from "../styles/variables";
+import { colours } from "../styles/variables";
 import { ChessPiece } from "../types";
 
 interface SquareProps {
-  isBlack: boolean;
-  highlighted: boolean;
+  isDarkTile: boolean;
+  position: string;
   chessPiece: ChessPiece;
 }
 
-const Square = ({ isBlack, highlighted, chessPiece }: SquareProps) => {
+const Square = ({ isDarkTile, chessPiece }: SquareProps) => {
   function handleClick() {
     console.log("U CLICKED ME");
   }
@@ -16,21 +16,17 @@ const Square = ({ isBlack, highlighted, chessPiece }: SquareProps) => {
   const ChessSquare = styled(Button)({
     width: "10vw",
     height: "10vh",
-    background: highlighted
-      ? colors.highlighted
-      : isBlack
-      ? colors.darkTile
-      : colors.lightTile,
+    backgroundColor: isDarkTile ? colours.darkTile : colours.lightTile,
     "&:hover": {
-      backgroundColor: colors.highlighted,
+      backgroundColor: colours.highlighted,
     },
   });
 
   return (
     <ChessSquare onClick={handleClick}>
       <img
-        src={"images/pieces/" + chessPiece.colour + chessPiece.piece + ".png"}
-        alt="placeholder"
+        src={`images/pieces/${chessPiece.colour}${chessPiece.piece}.png`}
+        alt=""
         style={{ height: "100%", width: "70%" }}
       ></img>
     </ChessSquare>

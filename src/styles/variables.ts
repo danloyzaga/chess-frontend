@@ -23,7 +23,7 @@ export const device = {
   desktopL: `(min-width: ${screenSize.desktop})`,
 };
 
-export const colors = {
+export const colours = {
   darkTile: "rgb(119,153,84)",
   lightTile: "rgb(233,237,204)",
   highlighted: "rgb(188,203,74)",
